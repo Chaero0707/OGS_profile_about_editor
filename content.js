@@ -30,7 +30,6 @@ function addHtmlToolbar() {
             btn.addEventListener('click', (e) => {
                 e.preventDefault();
                 
-                // 별도 클릭 핸들러가 있으면 그것을 실행, 없으면 기본 태그 삽입
                 if (onClickHandler) {
                     onClickHandler();
                 } else {
@@ -56,50 +55,85 @@ function addHtmlToolbar() {
 
         // --- 버튼 배치 시작 ---
 
+        // 굵게 버튼 추가
+        toolbar.appendChild(createButton('굵게 🚀', '<b>', '</b>'));
+
         // 제목 크기 버튼들
         toolbar.appendChild(createButton('H1', '<h1>', '</h1>'));
         toolbar.appendChild(createButton('H2', '<h2>', '</h2>'));
         toolbar.appendChild(createButton('H3', '<h3>', '</h3>'));
         toolbar.appendChild(createButton('H5', '<h5>', '</h5>'));
 
-        // [신규] 정렬 버튼들 추가
-        toolbar.appendChild(createButton('◀ 좌측 정렬', '<div style="text-align: left;">', '</div>'));
-        toolbar.appendChild(createButton('■ 중앙 정렬', '<div style="text-align: center;">', '</div>'));
-        toolbar.appendChild(createButton('▶ 우측 정렬', '<div style="text-align: right;">', '</div>'));
+        // 정렬 버튼들
+        toolbar.appendChild(createButton('◀ 좌측', '<div style="text-align: left;">', '</div>'));
+        toolbar.appendChild(createButton('■ 중앙', '<div style="text-align: center;">', '</div>'));
+        toolbar.appendChild(createButton('▶ 우측', '<div style="text-align: right;">', '</div>'));
 
-        // 정밀 색상 선택기 (Color Picker)
-        const colorLabel = document.createElement('label');
-        colorLabel.style.display = 'flex';
-        colorLabel.style.alignItems = 'center';
-        colorLabel.style.gap = '3px';
-        colorLabel.style.fontSize = '12px';
-        colorLabel.style.cursor = 'pointer';
+        // [신규] 글자 색상 선택기
+        const textColorLabel = document.createElement('label');
+        textColorLabel.style.display = 'flex';
+        textColorLabel.style.alignItems = 'center';
+        textColorLabel.style.gap = '3px';
+        textColorLabel.style.fontSize = '12px';
+        textColorLabel.style.cursor = 'pointer';
 
-        const colorInput = document.createElement('input');
-        colorInput.type = 'color';
-        colorInput.value = '#ff0000';
-        colorInput.style.width = '24px';
-        colorInput.style.height = '24px';
-        colorInput.style.padding = '0';
-        colorInput.style.border = 'none';
-        colorInput.style.cursor = 'pointer';
+        const textColorInput = document.createElement('input');
+        textColorInput.type = 'color';
+        textColorInput.value = '#ff0000'; // 기본값 빨강
+        textColorInput.style.width = '20px';
+        textColorInput.style.height = '20px';
+        textColorInput.style.padding = '0';
+        textColorInput.style.border = 'none';
+        textColorInput.style.cursor = 'pointer';
 
-        colorLabel.appendChild(colorInput);
-        colorLabel.appendChild(document.createTextNode('색상 적용'));
+        textColorLabel.appendChild(textColorInput);
+        textColorLabel.appendChild(document.createTextNode('글자색'));
         
-        colorLabel.addEventListener('click', (e) => {
-            if (e.target === colorInput) return; 
+        textColorLabel.addEventListener('click', (e) => {
+            if (e.target === textColorInput) return; 
             e.preventDefault();
-            const chosenColor = colorInput.value;
-            insertTags(`<span style="color: ${chosenColor};">`, '</span>');
+            insertTags(`<span style="color: ${textColorInput.value};">`, '</span>');
         });
-        
-        colorInput.addEventListener('change', () => {
-            const chosenColor = colorInput.value;
-            insertTags(`<span style="color: ${chosenColor};">`, '</span>');
+        textColorInput.addEventListener('change', () => {
+            insertTags(`<span style="color: ${textColorInput.value};">`, '</span>');
         });
+        toolbar.appendChild(textColorLabel);
 
-        toolbar.appendChild(colorLabel);
+        // [신규] 배경 색상 선택기
+        const bgColorLabel = document.createElement('label');
+        bgColorLabel.style.display = 'flex';
+        bgColorLabel.style.alignItems = 'center';
+        bgColorLabel.style.gap = '3px';
+        bgColorLabel.style.fontSize = '12px';
+        bgColorLabel.style.cursor = 'pointer';
+        bgColorLabel.style.marginLeft = '5px';
+
+        const bgColorInput = document.createElement('input');
+        bgColorInput.type = 'color';
+        bgColorInput.value = '#ffff00'; // 기본값 노랑(형광펜)
+        bgColorInput.style.width = '20px';
+        bgColorInput.style.height = '20px';
+        bgColorInput.style.padding = '0';
+        bgColorInput.style.border = 'none';
+        bgColorInput.style.cursor = 'pointer';
+
+        bgColorLabel.appendChild(bgColorInput);
+        bgColorLabel.appendChild(document.createTextNode('배경색'));
+        
+        bgColorLabel.addEventListener('click', (e) => {
+            if (e.target === bgColorInput) return; 
+            e.preventDefault();
+            insertTags(`<span style="background-color: ${bgColorInput.value};">`, '</span>');
+        });
+        bgColorInput.addEventListener('change', () => {
+            insertTags(`<span style="background-color: ${bgColorInput.value};">`, '</span>');
+        });
+        toolbar.appendChild(bgColorLabel);
+
+        // 구분선 살짝 띄우기
+        const spacer = document.createElement('span');
+        spacer.style.marginLeft = '5px';
+        toolbar.appendChild(spacer);
 
         // 기존 기능 버튼들
         toolbar.appendChild(createButton('이미지 🖼️', '<img src="이미지주소" alt="설명">', ''));
