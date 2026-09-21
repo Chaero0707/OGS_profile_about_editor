@@ -1,43 +1,43 @@
-# 🪨 OGS HTML 프로필 꾸미기 헬퍼 (OGS HTML Profile Helper)
+🪨 OGS HTML Profile Helper
 
-**Online Go Server(OGS)** 프로필 소개란을 작성할 때, 번거로운 HTML 태그 입력 없이 마우스 클릭 몇 번으로 프로필을 멋지게 꾸밀 수 있도록 도와주는 크롬 확장 프로그램입니다. 
+**Online Go Server (OGS)** is a Chrome extension that helps you style your profile beautifully with just a few mouse clicks, without the hassle of entering HTML tags. 
 
-크롬 웹 스토어에 등록할 필요 없이, 소스코드를 다운로드하여 내 컴퓨터에서 즉시 사용할 수 있습니다.
-
----
-
-## ✨ 주요 기능
-* **글자 크기 조절:** H1, H2, H3, H5 크기 원클릭 지정
-* **스타일 적용:** 글자 굵게(Bold) 지정
-* **정밀한 색상 선택:** 내장된 컬러 피커로 글자색 및 배경색(형광펜)을 자유롭게 변경
-* **문단 정렬:** 왼쪽, 가운데, 오른쪽 정렬 지원
-* **미디어 및 링크:** 이미지 태그(`<img>`) 삽입 및 하이퍼링크(`<a>`) 자동 생성
+No need to register in the Chrome Web Store; download the source code and use it immediately on your computer.
 
 ---
 
-## 🚀 설치 및 사용 방법 (30초 컷!)
-
-크롬 스토어에 등록되지 않은 확장이므로 아래 순서대로 직접 등록해 주세요.
-
-### 1. 소스코드 다운로드
-1. 이 깃허브 페이지 우측 상단의 **[Code]** 녹색 버튼을 누릅니다.
-2. **[Download ZIP]**을 클릭하여 압축 파일을 다운로드합니다.
-3. 다운로드한 파일의 압축을 해제하여 하나의 폴더로 만듭니다.
-
-### 2. 크롬 브라우저에 등록
-1. 구글 크롬 브라우저를 열고 주소창에 `chrome://extensions/`를 입력해 이동합니다.
-2. 우측 상단의 **'개발자 모드'** 토글 스위치를 켭니다.
-3. 좌측 상단에 새로 나타난 **'압축해제된 확장 프로그램을 로드합니다.'** 버튼을 클릭합니다.
-4. 아까 압축을 풀었던 소스코드 폴더를 선택하면 끝!
-
-### 3. 사용하기
-1. [Online Go Server (OGS)](https://online-go.com) 사이트에 접속합니다.
-2. 내 프로필 설정 창이나 소개란 입력칸(`textarea`)으로 이동합니다.
-3. 입력창 위에 자동으로 생성된 툴바를 이용해 프로필을 꾸며보세요!
-   *(원하는 글자를 드래그한 상태에서 버튼을 누르면 태그가 자동으로 감싸집니다.)*
+✨ Key Features
+* **Text Size Adjustment:** One-click settings for H1, H2, H3, and H5 sizes
+* Apply ** style:** Set text to bold
+* **Precise color selection:** Freely change text and background colors (highlighter) with the built-in color picker
+* **Paragraph Alignment:** Supports left, center, and right alignment
+* **Media and Links:** Insert image tags (`<img>`) and automatically generate hyperlinks (`<a>`)
 
 ---
 
-## 📁 포함된 파일 구조
-* `manifest.json`: 확장 프로그램 기본 정보 및 OGS 사이트 접근 권한
-* `content.js`: OGS 편집창 감지 및 HTML 마크업 툴바 생성 로직
+🚀 Installation and How to Use (In 30 Seconds!)
+
+Since this extension is not yet listed in the Chrome Store, please add it manually by following the steps below.
+
+### 1. Download the Source Code
+1. Click the **[Code]** green button at the top right of this GitHub page.
+2. Click **[Download ZIP]** to download the compressed file.
+3. Extract the downloaded files into a single folder.
+
+### 2. Register in the Chrome browser
+1. Open the Google Chrome browser and go to `chrome://extensions/` in the address bar.
+2. Turn on the **'Developer Mode'** toggle switch at the top right.
+3. Click the newly displayed ** in the upper-left corner to load the extracted extension.Click the '** button.
+4. Just select the source code folder you extracted earlier, and you're done!
+
+### 3. Use
+1. Visit the [Online Go Server (OGS)] website at https://online-go.com .
+2. Go to the profile settings window or the input field (textarea) in the bio section.
+3. Use the toolbar automatically generated above the input field to customize your profile!
+   * (Press the button while dragging the desired text to automatically wrap the tag.)
+
+---
+
+📁 Included File Structure
+* `manifest.json`: Basic information about the extension and OGS site access permissions
+* `content.js`: Logic for detecting the OGS editor and generating the HTML markup toolbar
