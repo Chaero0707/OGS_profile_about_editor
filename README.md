@@ -20,9 +20,8 @@ No need to register in the Chrome Web Store; download the source code and use it
 Since this extension is not yet listed in the Chrome Store, please add it manually by following the steps below.
 
 ### 1. Download the Source Code
-1. Click the **[Code]** green button at the top right of this GitHub page.
-2. Click **[Download ZIP]** to download the compressed file.
-3. Extract the downloaded files into a single folder.
+1. Download the zip file from the release items.
+2. Extract the downloaded files into a single folder.
 
 ### 2. Register in the Chrome browser
 1. Open the Google Chrome browser and go to `chrome://extensions/` in the address bar.
