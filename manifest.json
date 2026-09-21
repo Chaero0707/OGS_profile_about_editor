@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "OGS 소개란 HTML 마크업 편집기",
+  "version": "1.0",
+  "description": "OGS 소개란에서 <h1>, 색상 태그 등을 쉽게 삽입할 수 있도록 툴바를 제공합니다.",
+  "permissions": ["activeTab"],
+  "content_scripts": [
+    {
+      "matches": ["https://online-go.com/*"],
+      "js": ["content.js"],
+      "css": ["styles.css"]
+    }
+  ]
+}

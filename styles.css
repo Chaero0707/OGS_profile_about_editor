@@ -1,0 +1,27 @@
+.ogs-html-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  background: #f1f1f1;
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-bottom: none;
+  border-radius: 4px 4px 0 0;
+  margin-top: 10px;
+}
+
+.ogs-toolbar-btn {
+  background: #ffffff;
+  border: 1px solid #bbb;
+  padding: 4px 8px;
+  font-size: 12px;
+  border-radius: 3px;
+  cursor: pointer;
+  color: #333 !important;
+  font-weight: bold;
+}
+
+.ogs-toolbar-btn:hover {
+  background: #e0e0e0;
+  border-color: #999;
+}
