@@ -62,7 +62,12 @@ function addHtmlToolbar() {
         toolbar.appendChild(createButton('H3', '<h3>', '</h3>'));
         toolbar.appendChild(createButton('H5', '<h5>', '</h5>'));
 
-        // 정밀 색상 선택기 (Color Picker) 추가
+        // [신규] 정렬 버튼들 추가
+        toolbar.appendChild(createButton('◀ 좌측 정렬', '<div style="text-align: left;">', '</div>'));
+        toolbar.appendChild(createButton('■ 중앙 정렬', '<div style="text-align: center;">', '</div>'));
+        toolbar.appendChild(createButton('▶ 우측 정렬', '<div style="text-align: right;">', '</div>'));
+
+        // 정밀 색상 선택기 (Color Picker)
         const colorLabel = document.createElement('label');
         colorLabel.style.display = 'flex';
         colorLabel.style.alignItems = 'center';
@@ -72,7 +77,7 @@ function addHtmlToolbar() {
 
         const colorInput = document.createElement('input');
         colorInput.type = 'color';
-        colorInput.value = '#ff0000'; // 기본값 빨간색
+        colorInput.value = '#ff0000';
         colorInput.style.width = '24px';
         colorInput.style.height = '24px';
         colorInput.style.padding = '0';
@@ -82,16 +87,13 @@ function addHtmlToolbar() {
         colorLabel.appendChild(colorInput);
         colorLabel.appendChild(document.createTextNode('색상 적용'));
         
-        // 색상 적용 클릭 시 동작
         colorLabel.addEventListener('click', (e) => {
-            // input 자체를 클릭했을 때는 동작 방지 (컬러창만 뜨게)
             if (e.target === colorInput) return; 
             e.preventDefault();
             const chosenColor = colorInput.value;
             insertTags(`<span style="color: ${chosenColor};">`, '</span>');
         });
         
-        // input 색상이 변경되었을 때도 글자 드래그 상태면 바로 적용 가능하도록 지원
         colorInput.addEventListener('change', () => {
             const chosenColor = colorInput.value;
             insertTags(`<span style="color: ${chosenColor};">`, '</span>');
@@ -102,7 +104,7 @@ function addHtmlToolbar() {
         // 기존 기능 버튼들
         toolbar.appendChild(createButton('이미지 🖼️', '<img src="이미지주소" alt="설명">', ''));
         
-        // 링크 버튼 (동적 URL 팝업)
+        // 링크 버튼
         toolbar.appendChild(createButton('링크 🔗', '', '', () => {
             const url = prompt("이동할 링크 주소(URL)를 입력하세요:", "https://");
             if (!url) return;
@@ -114,5 +116,5 @@ function addHtmlToolbar() {
     });
 }
 
-// OGS 사이트 특성 반영 (1초마다 감시)
+// OGS 사이트 감시
 setInterval(addHtmlToolbar, 1000);
