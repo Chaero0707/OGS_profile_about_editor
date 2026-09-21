@@ -1,4 +1,4 @@
-🪨 OGS HTML Profile Helper
+### 🪨 OGS HTML Profile Helper
 
 **Online Go Server (OGS)** is a Chrome extension that helps you style your profile beautifully with just a few mouse clicks, without the hassle of entering HTML tags. 
 
@@ -15,7 +15,7 @@ No need to register in the Chrome Web Store; download the source code and use it
 
 ---
 
-🚀 Installation and How to Use (In 30 Seconds!)
+### 🚀 Installation and How to Use (In 30 Seconds!)
 
 Since this extension is not yet listed in the Chrome Store, please add it manually by following the steps below.
 
@@ -38,6 +38,6 @@ Since this extension is not yet listed in the Chrome Store, please add it manual
 
 ---
 
-📁 Included File Structure
+### 📁 Included File Structure
 * `manifest.json`: Basic information about the extension and OGS site access permissions
 * `content.js`: Logic for detecting the OGS editor and generating the HTML markup toolbar
